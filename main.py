@@ -11,7 +11,8 @@ async def root():
     # Encode response into JSON
     response = jsonable_encoder({
         "instance-id": imdsv2.getInstanceID(), # Get instance ID from IMDSv2
-        "local-hostname": imdsv2.getInstanceHostname(), # Get instance local hostname from IMDSv2
+        "local-hostname": imdsv2.getInstanceLocalHostname(), # Get instance local hostname from IMDSv2
+        "local-ipv4": imdsv2.getInstanceLocalAddress(), # Get instance local address from IMDSv2
     })
     # Send the response
     return JSONResponse(content=response)

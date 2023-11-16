@@ -31,6 +31,10 @@ def assembleReqHeader():
 def getInstanceID():
     return req("GET", IMDS_ADDRESS, "/latest/meta-data/instance-id", assembleReqHeader())
 
-# Request instance hostname from IMDS
-def getInstanceHostname():
+# Request instance local hostname from IMDS
+def getInstanceLocalHostname():
     return req("GET", IMDS_ADDRESS, "/latest/meta-data/local-hostname", assembleReqHeader())
+
+# Request instance local address from IMDS
+def getInstanceLocalAddress():
+    return req("GET", IMDS_ADDRESS, "/latest/meta-data/local-ipv4", assembleReqHeader())
