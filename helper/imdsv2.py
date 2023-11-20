@@ -38,3 +38,7 @@ def getInstanceLocalHostname():
 # Request instance local address from IMDS
 def getInstanceLocalAddress():
     return req("GET", IMDS_ADDRESS, "/latest/meta-data/local-ipv4", assembleReqHeader())
+
+# Request instance availability zone
+def getInstanceAvailabilityZone():
+    return req("GET", IMDS_ADDRESS, "/latest/meta-data/placement/availability-zone")
