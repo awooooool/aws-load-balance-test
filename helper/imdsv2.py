@@ -41,4 +41,4 @@ def getInstanceLocalAddress():
 
 # Request instance availability zone
 def getInstanceAvailabilityZone():
-    return req("GET", IMDS_ADDRESS, "/latest/meta-data/placement/availability-zone")
+    return req("GET", IMDS_ADDRESS, "/latest/meta-data/placement/availability-zone", assembleReqHeader())
